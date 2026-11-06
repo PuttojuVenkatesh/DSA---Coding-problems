@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    int t;   cin>>t;
+    while(t--){
+     long long a,b,x,y;
+     cin>>a>>b>>x>>y;
+        int ans=0;
+       if(b<a-1){
+         cout<<"-1"<<endl;
+         continue;
+       }
+       if(b==a-1){
+        if(a%2==0){
+            cout<<"-1"<<endl;
+            continue;    
+        }
+        else{
+            cout<<y<<endl;
+            continue;   
+        }
+       }
+       if(b>=a){
+        while(a!=b){
+            if(a%2==0){
+                ans+=x;
+            }
+            else{
+                ans+=min(x,y);
+            }
+            a++;
+        }
+       }
+       cout<<ans<<endl;
+    }
+   
+ 
+        return 0;
+}
