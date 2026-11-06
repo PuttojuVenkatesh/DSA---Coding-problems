@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+ 
+int main(){
+ int t;  cin>>t;
+ while(t--){
+ int n,k;   cin>>n>>k;
+ string s;   cin>>s;
+  int cnt=0;
+         int sleep=0;
+         for(int i=1;i<=n;i++){
+          if(s[i-1]=='1'){
+            cnt=max(cnt,i+k);
+          }
+          else if(i>cnt){
+            sleep++;
+          }
+         }
+ 
+         cout<<sleep<<endl;
+       
+ 
+ 
+}
+return 0;
+}
