@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    
+    int t; 
+    cin >> t;  
+    while(t--) {
+      string s;   cin>>s;
+      long long n=s.size();
+      long long cnt=0;
+      bool ans=false;
+      for(long long i=0;i<n;i++){
+         if(s[i]=='(')
+         cnt++;
+         else
+         cnt--;
+ 
+         if(i<n-1 && cnt==0){
+            ans=true;
+         }
+      }
+      if(ans)
+      cout<<"YES"<<endl;
+      else
+      cout<<"NO"<<endl;
+      
+    
+    }
+ 
+    return 0;
+}
