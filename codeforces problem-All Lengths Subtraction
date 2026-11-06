@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+   int t; cin>>t;
+   while(t--){
+  int n;  cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) {
+   cin>>a[i];
+  }
+  bool ans=true;
+    long long cur=1;
+    long long l=0, r=n-1;
+    while(cur<=n){
+      if(a[l]==cur){
+         cur++;
+         l++;
+         continue;
+      }
+      if(a[r]==cur){
+         cur++;
+         r--;
+         continue;
+      }
+      ans=false;
+      break;
+    }
+    if(ans){
+      cout<<"YES"<<endl;
+    }
+    else{
+      cout<<"NO"<<endl;
+    }
+ 
+  }
+  }
