@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    
+    int t; 
+    cin >> t;  
+    while(t--) {
+      long long n;
+      cin>>n;
+      long long a[n];
+     for(long long i=0;i<n;i++){
+      cin>>a[i];
+     }
+     long long cnt1=-1, cnt2=-1;
+     sort(a,a+n);
+     for(long long i=0;i<n;i++){
+         if(cnt1==-1 && (a[i]%2)!=(a[0]%2)){
+          cnt1=i;
+         }
+         if((a[i]%2)!=(a[n-1]%2)){
+          cnt2=i;
+         }
+     }
+     if((a[0]+a[n-1])%2){
+          cout<<min(cnt1,n-cnt2-1)<<endl;
+     }
+     else{
+      cout<<0<<endl;
+     }
+    
+    }
+ 
+    return 0;
+}
